@@ -12,38 +12,74 @@
 
   <style>
     .contact-page {
-      padding: 50px 20px;
+      padding: 55px 18px;
+      min-height: 70vh;
     }
 
-    .contact-title {
+    .contact-hero {
+      max-width: 850px;
+      margin: 0 auto 35px;
       text-align: center;
-      margin-bottom: 35px;
     }
 
-    .contact-title h1 {
+    .contact-hero h1 {
+      font-size: 32px;
       margin-bottom: 12px;
+    }
+
+    .contact-hero p {
+      color: #666;
+      font-size: 17px;
+      line-height: 1.9;
     }
 
     .contact-grid {
       max-width: 900px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
     }
 
     .contact-card {
       background: #fff;
-      border-radius: 18px;
-      padding: 28px 22px;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
       border: 1px solid #eee;
+      border-radius: 22px;
+      padding: 30px 22px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.10);
     }
 
     .contact-icon {
-      font-size: 38px;
-      margin-bottom: 12px;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .phone-icon {
+      background: #e8f7ef;
+      color: #198754;
+    }
+
+    .instagram-icon {
+      background: #fbe8f2;
+      color: #c13584;
+    }
+
+    .address-icon {
+      background: #eaf2ff;
+      color: #2463b5;
     }
 
     .contact-card h2 {
@@ -52,43 +88,116 @@
     }
 
     .contact-card p {
-      line-height: 2;
-      margin: 0;
+      margin: 6px 0;
+      line-height: 1.9;
+      color: #555;
+    }
+
+    .phone-number {
+      direction: ltr;
+      display: inline-block;
+      font-size: 22px;
+      font-weight: bold;
+      color: #222;
+      margin-top: 4px;
+    }
+
+    .instagram-id {
+      direction: ltr;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 19px;
+      font-weight: bold;
+      color: #c13584;
+      margin-top: 5px;
+    }
+
+    .instagram-mini-icon {
+      width: 22px;
+      height: 22px;
     }
 
     .contact-button {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 12px 25px;
-      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 13px 24px;
+      border-radius: 13px;
       text-decoration: none;
       font-weight: bold;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-button:hover {
+      opacity: 0.88;
     }
 
     .phone-button {
       background: #198754;
-      color: white;
+      color: #fff;
     }
 
     .instagram-button {
       background: #c13584;
-      color: white;
+      color: #fff;
     }
 
     .address-card {
       grid-column: 1 / -1;
     }
 
+    .address-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333 !important;
+    }
+
     .contact-footer {
+      max-width: 900px;
+      margin: 35px auto 0;
+      padding: 28px 20px;
       text-align: center;
-      margin-top: 45px;
-      padding: 30px 20px;
-      background: #f7f7f7;
-      border-radius: 18px;
+      background: linear-gradient(135deg, #f7f9fc, #ffffff);
+      border: 1px solid #eee;
+      border-radius: 22px;
+    }
+
+    .contact-footer h2 {
+      margin-top: 0;
     }
 
     .contact-footer p {
-      margin: 8px 0;
+      line-height: 1.9;
+      color: #666;
+    }
+
+    @media (max-width: 650px) {
+      .contact-page {
+        padding: 40px 15px;
+      }
+
+      .contact-hero h1 {
+        font-size: 27px;
+      }
+
+      .contact-hero p {
+        font-size: 15px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .address-card {
+        grid-column: auto;
+      }
+
+      .contact-card {
+        padding: 27px 18px;
+      }
     }
   </style>
 </head>
@@ -117,11 +226,10 @@
 
   <section class="contact-page">
 
-    <div class="contact-title">
+    <div class="contact-hero">
       <h1>تماس با گیل‌یار</h1>
-
       <p>
-        برای دریافت خدمات فنی در رشت با ما در ارتباط باشید.
+        برای دریافت خدمات فنی پکیج، کولر، آبگرمکن و سیستم‌های گرمایشی در رشت با ما در ارتباط باشید.
       </p>
     </div>
 
@@ -129,22 +237,22 @@
 
       <div class="contact-card">
 
-        <div class="contact-icon">📞</div>
+        <div class="contact-icon phone-icon">📞</div>
 
         <h2>تماس مستقیم</h2>
 
-        <p>
-          بهروز فتاحی
-        </p>
+        <p>بهروز فتاحی</p>
 
-        <p>
+        <div class="phone-number">
           09116537934
-        </p>
+        </div>
+
+        <br>
 
         <a
           class="contact-button phone-button"
           href="tel:09116537934">
-          تماس با گیل‌یار
+          📞 تماس با گیل‌یار
         </a>
 
       </div>
@@ -152,20 +260,51 @@
 
       <div class="contact-card">
 
-        <div class="contact-icon">📷</div>
+        <div class="contact-icon instagram-icon">
+
+          <svg width="34" height="34" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1"></circle>
+
+          </svg>
+
+        </div>
 
         <h2>اینستاگرام گیل‌یار</h2>
 
-        <p>
+        <div class="instagram-id">
+
+          <svg class="instagram-mini-icon"
+               viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1"></circle>
+
+          </svg>
+
           @behroozfattahii
-        </p>
+
+        </div>
+
+        <br>
 
         <a
           class="contact-button instagram-button"
           href="https://instagram.com/behroozfattahii"
           target="_blank"
           rel="noopener noreferrer">
-          📷 مشاهده صفحه اینستاگرام
+
+          مشاهده صفحه اینستاگرام
+
         </a>
 
       </div>
@@ -173,11 +312,11 @@
 
       <div class="contact-card address-card">
 
-        <div class="contact-icon">📍</div>
+        <div class="contact-icon address-icon">📍</div>
 
-        <h2>آدرس</h2>
+        <h2>آدرس گیل‌یار</h2>
 
-        <p>
+        <p class="address-text">
           رشت، خیابان شهدا، جنب مسجد ثارالله
         </p>
 
@@ -191,15 +330,11 @@
       <h2>خدمات فنی گیل‌یار</h2>
 
       <p>
-        تعمیر و سرویس پکیج، آبگرمکن، کولر و سیستم‌های گرمایشی
+        تعمیر و سرویس پکیج، آبگرمکن، کولر، رادیاتور و سیستم‌های گرمایشی
       </p>
 
       <p>
         <strong>بهروز فتاحی</strong>
-      </p>
-
-      <p>
-        <a href="tel:09116537934">09116537934</a>
       </p>
 
     </div>
